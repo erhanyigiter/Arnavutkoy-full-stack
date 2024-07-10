@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link rel="stylesheet" media="screen" href="css/custom-style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+<body>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<div class="container">
+  <div class="avatar">
+    <img src="Images/ipyazilimhizmetleri.svg" alt="Avatar" style="width: 300px; height: auto;" />
+  </div>
+  <div class="content">
+  <h1>IP YAZILIM HIZMETLERI</h1>
+    <h2>Quality Service</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi magnam neque similique, blanditiis in quisquam vero adipisci reprehenderit minima placeat delectus, voluptates dolores architecto. Ex consequatur explicabo inventore atque a. <br>
+      Istanbul/Turkey
+    </p>
+    <h3>Contact And Social Media </h3>
+    <div class="social">
+      <a href="mailto:destek@ipyazilimhizmetleri.com.tr" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope"></i>
+        
+        
+        
+        </a>
+      <a href="https://linkedin.com/in/erhanyigit-er" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+      <a href="tel:05382015720" rel="noopener noreferrer"><i class="bi bi-telephone"></i>
+        
+        </a>
+    </div>
+    <div class="color-picker">
+      <label for="bg-color">Choose your color:</label>
+      <input type="color" id="bg-color" name="bg-color" value="#000000">
+    </div>
+  </div>
+</div>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+  crossorigin="anonymous"
+></script>
+
+<!-- scripts -->
+<script src="../particles.js"></script>
+<script src="js/app.js"></script>
+
+<!-- stats.js -->
+<script src="js/lib/stats.js"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+
+  document.getElementById('bg-color').addEventListener('input', function() {
+    document.getElementById('particles-js').style.backgroundColor = this.value;
+  });
+</script>
+
+</body>
+</html>
